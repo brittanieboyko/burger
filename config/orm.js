@@ -22,14 +22,18 @@ const orm = {
       cb(result);
     });
   },
+  create: (table, cols, vals, cb) => {
+    let queryString = `INSERT INTO ${table} (${cols.toString()}) VALUES (?,?) `;
+    connection.query(queryString, vals, (err, result) => {
+      if (err) throw err;
+      cb(result);
+    });
+  },
   update: (table, objColVals, condition, cb) => {
     let value = objToSql(objColVals);
     let queryString = `UPDATE ${table} SET ${value} WHERE ${condition};`
-
-    console.log(queryString);
     connection.query(queryString, (err, result) => {
       if (err) throw err;
-
       cb(result);
     });
   },
