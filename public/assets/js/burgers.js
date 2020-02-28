@@ -17,4 +17,22 @@ $(function() {
         }
       );
     });
+
+    $(".create-form").on("submit", function(event) {
+        event.preventDefault();
+    
+        let newBurger = {
+          burger_name: $("#ca").val().trim(),
+          devoured: 0
+        };
+    
+        $.ajax("/api/burgers", {
+          type: "POST",
+          data: newBurger
+        }).then(
+          function() {
+            location.reload();
+          }
+        );
+      });
 })
