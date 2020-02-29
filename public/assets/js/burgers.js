@@ -12,7 +12,6 @@ $(function() {
         data: newBurgerState
       }).then(
         function() {
-          console.log("burger got eat", newBurgerState);
           location.reload();
         }
       );
