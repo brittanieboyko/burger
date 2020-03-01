@@ -1,5 +1,20 @@
 body {
-    background-color: #C7D3DD;
+    background-color: #fff076;
     font-family: 'Noto Sans JP';
-    color: #37393A;
+    color: #f06543;
+}
+
+.jumbotron {
+    background-color: #f5b82e;
+}
+
+.form-group {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 3%;
+    padding: 1%;
+}
+
+.eat-burger {
+    margin: 1%;
 }
